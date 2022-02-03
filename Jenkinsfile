@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage ('Checkout') {
             steps {
-              checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/rhea-2000/myPython-Docker-Repo.git']]])
+              checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/rhea-2000/my-nodejs-app.git']]])
             }
         }
         stage ('Build') {
