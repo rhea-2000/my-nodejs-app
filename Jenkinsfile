@@ -21,7 +21,8 @@ pipeline {
             steps {
                   script {
 			              //dockerImage = docker.build "${IMAGE_REPO_NAME}:${IMAGE_TAG}"
-			  sh 'docker build -t ${IMAGE_REPO_NAME}:${IMAGE_TAG} .'
+			  //sh 'docker build -t ${IMAGE_REPO_NAME}:${IMAGE_TAG} .'
+			    sh 'docker build -t my-docker-repo .'
                   }
              }    
          }
