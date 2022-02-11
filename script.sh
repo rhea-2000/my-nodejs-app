@@ -16,6 +16,4 @@ sed -i "s#NAME#$NAME#g" task-definition.json
 
 aws ecs register-task-definition --cli-input-json file://task-definition.json --region="${AWS_DEFAULT_REGION}"
 
-REVISION=1
-echo "REVISION= " "${REVISION}"
-aws ecs update-service --cluster node-js-app --service node-js-r --task-definition node-task:"${REVISION}" --desired-count 1
+aws ecs update-service --cluster node-js-app --service node-js-r --task-definition node-task:1 --desired-count 1
