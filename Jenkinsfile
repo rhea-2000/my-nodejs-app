@@ -39,7 +39,7 @@ pipeline {
              steps{
                  withAWS(credentials:'aws', region: "${AWS_DEFAULT_REGION}") {
                 script {
-			          './script.sh'
+			      sh "./script.sh"
                 }
             } 
         }
