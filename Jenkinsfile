@@ -39,8 +39,8 @@ pipeline {
              steps{
                  withAWS(credentials:'aws', region: "${AWS_DEFAULT_REGION}") {
                 script {
-			      sh "sudo chmod 666 ./script.sh"
-			      sh "./script.sh"
+			      sh 'sudo chmod 777 ./script.sh'
+			      sh './script.sh'
                 }
             } 
         }
