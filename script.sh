@@ -1,10 +1,10 @@
-ROLE_ARN="arn:aws:iam::993745358053:role/ecsTaskExecutionRole"
+ROLE_ARN='"arn:aws:iam::993745358053:role/ecsTaskExecutionRole"'
 echo "ROLE_ARN= " $ROLE_ARN
 
-FAMILY="node-task"
+FAMILY='"node-task"'
 echo "FAMILY= " $FAMILY
 
-NAME="node-js-r"
+NAME='"node-js-r"'
 echo "NAME= " $NAME
 
 sed -i "s#BUILD_NUMBER#$IMAGE_TAG#g" task-definition.json
