@@ -8,7 +8,7 @@ pipeline {
 	    TASK_DEFINITION_NAME="node-task"
 	    DESIRED_COUNT="1"
             IMAGE_REPO_NAME="993745358053.dkr.ecr.us-east-1.amazonaws.com/my-docker-repo"
-            IMAGE_TAG="${env.BUILD_ID}"
+            IMAGE_TAG="latest"
             REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
     }
     stages {
@@ -21,8 +21,9 @@ pipeline {
             steps {
                   script {
 			              //dockerImage = docker.build "${IMAGE_REPO_NAME}:${IMAGE_TAG}"
-			  //sh 'docker build -t ${IMAGE_REPO_NAME}:${IMAGE_TAG} .'
-			    sh 'docker build -t my-docker-repo .'
+			             //sh 'docker build -t ${IMAGE_REPO_NAME}:${IMAGE_TAG} .'
+			             //sh 'docker build -t my-docker-repo .'
+			              dockerImage = docker.build "${IMAGE_REPO_NAME}:${IMAGE_TAG}"
                   }
              }    
          }
@@ -39,7 +40,7 @@ pipeline {
              steps{
                  withAWS(credentials:'aws', region: "${AWS_DEFAULT_REGION}") {
                 script {
-			      sh 'sudo chmod 777 ./script.sh'
+			      //sh 'sudo chmod 777 ./script.sh'
 			      sh './script.sh'
                 }
             } 
