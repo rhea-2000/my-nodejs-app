@@ -18,4 +18,4 @@ aws ecs register-task-definition --cli-input-json file://task-definition.json --
 
 REVISION='"aws ecs describe-task-definition --task-definition node-task --region us-east-1 | jq .taskDefinition.revision"'
 echo "REVISION= " "${REVISION}"
-aws ecs update-service --cluster node-js-app --service node-js-r --task-definition node-task:"${REVISION}" --desired-count 1
+aws ecs update-service --cluster node-js-app --service node-js-r --task-definition node-task:1 --desired-count 1
