@@ -16,6 +16,6 @@ sed -i "s#NAME#$NAME#g" task-definition.json
 
 aws ecs register-task-definition --cli-input-json file://task-definition.json --region="${AWS_DEFAULT_REGION}"
 
-REVISION='aws ecs describe-task-definition --task-definition node-task --region us-east-1 | jq .taskDefinition.revision'
+REVISION=aws ecs describe-task-definition --task-definition node-task --region us-east-1 | jq .taskDefinition.revision
 echo "REVISION= " "${REVISION}"
 
