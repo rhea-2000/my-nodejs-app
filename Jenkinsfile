@@ -5,7 +5,7 @@ pipeline {
             AWS_DEFAULT_REGION="us-east-1"
 	    CLUSTER_NAME="node-js-app"
 	    SERVICE_NAME="node-js-r-service"
-	    TASK_DEFINITION_NAME="node-js-task"
+	    TASK_DEFINITION_NAME="node-task"
 	    DESIRED_COUNT="1"
             IMAGE_REPO_NAME="993745358053.dkr.ecr.us-east-1.amazonaws.com/my-docker-repo"
             IMAGE_TAG="${env.BUILD_ID}"
