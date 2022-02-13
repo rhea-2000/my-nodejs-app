@@ -43,6 +43,7 @@ pipeline {
                 script {
 			      sh 'sudo chmod 777 ./script.sh'
 			      sh './script.sh'
+			sh 'aws ecs register-task-definition --cli-input-json file://task-definition.json --region=us-east-1'
                 }
             } 
         }
