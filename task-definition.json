@@ -1,9 +1,9 @@
 {
-    "family": FAMILY,
+    "family":"node-task",
     "containerDefinitions": [
         {
             "image": "REPOSITORY_URI:BUILD_NUMBER",
-            "name": NAME,
+            "name":"node-js-r",
 	    "essential": true,
             "portMappings": [
                 {
@@ -19,5 +19,5 @@
              "FARGATE"
     ],
     "networkMode": "awsvpc",
-    "executionRoleArn": ROLE_ARN
+    "executionRoleArn":"arn:aws:iam::993745358053:role/ecsTaskExecutionRole"
 }
