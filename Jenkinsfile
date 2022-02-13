@@ -44,6 +44,7 @@ pipeline {
 			      sh 'sudo chmod 777 ./script.sh'
 			      sh './script.sh'
 			sh 'aws ecs register-task-definition --cli-input-json file://task-definition.json --region=us-east-1'
+                       sh 'aws ecs update-service --cluster node-js-app --service node-js-r-service --task-definition node-task:1'
                 }
             } 
         }
