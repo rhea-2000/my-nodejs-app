@@ -1,10 +1,10 @@
-ROLE_ARN='"arn:aws:iam::993745358053:role/ecsTaskExecutionRole"'
+ROLE_ARN=aws ecs describe-task-definition --task-definition "${TASK_DEFINITION_NAME}" --region "${AWS_DEFAULT_REGION}" | jq .taskDefinition.executionRoleArn
 echo "ROLE_ARN= " $ROLE_ARN
 
-FAMILY='"node-task"'
+FAMILY=aws ecs describe-task-definition --task-definition "${TASK_DEFINITION_NAME}" --region "${AWS_DEFAULT_REGION}" | jq .taskDefinition.family
 echo "FAMILY= " $FAMILY
 
-NAME='"node-js-r"'
+NAME=aws ecs describe-task-definition --task-definition "${TASK_DEFINITION_NAME}" --region "${AWS_DEFAULT_REGION}" | jq .taskDefinition.containerDefinitions[].name
 echo "NAME= " $NAME
 
 sed -i "s#BUILD_NUMBER#$IMAGE_TAG#g" task-definition.json
