@@ -37,7 +37,7 @@ pipeline {
         }
         stage('Deploy') {
              steps{
-                 withAWS(credentials:'aws', region: "${AWS_DEFAULT_REGION}") {
+                 withAWS(credentials:'306c7b33-b2ac-4db0-8eef-d3d609da29d4', region: "${AWS_DEFAULT_REGION}") {
                 script {
 			      sh 'sudo chmod 777 ./script.sh'
 			      sh './script.sh'
